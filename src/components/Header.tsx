@@ -78,7 +78,7 @@ const Header = () => {
             ref={titleRef}
             className="text-5xl lg:text-8xl font-extralight tracking-wider mb-6 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent"
           >
-            Design Gallery
+            DUBAI LUXE
           </h1>
           
           {/* Decorative line */}
@@ -91,9 +91,9 @@ const Header = () => {
             ref={subtitleRef}
             className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            Immersive spaces crafted for extraordinary experiences. 
+            Architectural Mastery & Interior Excellence in the Heart of Emirates. 
             <br className="hidden lg:block" />
-            Explore our portfolio of architectural and interior design projects.
+            Discover our premium portfolio of luxury developments and design innovations.
           </p>
         </div>
       </div>

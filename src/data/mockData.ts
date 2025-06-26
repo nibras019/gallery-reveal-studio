@@ -14,12 +14,12 @@ export const categories: Category[] = [
 export const mockProjects: Project[] = [
   {
     id: '1',
-    title: 'Zenith Penthouse',
-    slug: 'zenith-penthouse',
+    title: 'Burj Al Serenity',
+    slug: 'burj-al-serenity',
     category: 'luxury',
     featuredImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'A modern minimalist penthouse with panoramic city views and bespoke luxury finishes',
-    bodyContent: 'This stunning penthouse represents the pinnacle of urban luxury living. Every detail has been carefully curated to create a serene oasis above the bustling city. Floor-to-ceiling windows flood the space with natural light, while premium materials including Italian marble, French oak, and hand-selected art pieces create an atmosphere of sophisticated elegance. The design seamlessly blends contemporary architecture with timeless luxury.',
+    shortDescription: 'Ultra-luxury penthouse with panoramic views of Dubai Marina and Persian Gulf waters',
+    bodyContent: 'This stunning penthouse represents the pinnacle of Emirates luxury living. Every detail has been carefully curated to create a serene oasis above the bustling cityscape of Dubai. Floor-to-ceiling windows flood the space with natural light while capturing breathtaking views of the iconic skyline. Premium materials including Italian Carrara marble, Lebanese cedar, and hand-selected Arabian art pieces create an atmosphere of sophisticated Middle Eastern elegance.',
     galleryImages: [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&h=600&fit=crop&q=80',
@@ -27,17 +27,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&q=80'
     ],
     year: '2024',
-    client: 'Private Estate',
-    location: 'Manhattan, NY'
+    client: 'Emirates Private Estate',
+    location: 'Dubai Marina, UAE'
   },
   {
     id: '2',
-    title: 'Nexus Corporate Hub',
-    slug: 'nexus-corporate-hub',
+    title: 'Emirates Trade Tower',
+    slug: 'emirates-trade-tower',
     category: 'office',
     featuredImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Contemporary office space fostering collaboration and innovation through biophilic design',
-    bodyContent: 'The Nexus Corporate Hub redefines the modern workplace through innovative design and strategic space planning. Open collaboration areas seamlessly blend with private focus zones, creating a dynamic environment that adapts to diverse work styles. Living walls, natural materials, and abundant daylight create a biophilic atmosphere that enhances productivity and wellbeing.',
+    shortDescription: 'State-of-the-art corporate headquarters fostering innovation in Dubai International Financial Centre',
+    bodyContent: 'Emirates Trade Tower redefines the modern Middle Eastern workplace through innovative design and strategic space planning. Open collaboration areas seamlessly blend with private executive zones, creating a dynamic environment that reflects Dubai\'s position as a global business hub. Arabian-inspired geometric patterns, premium finishes, and cutting-edge smart building technology create an atmosphere that enhances productivity while honoring regional heritage.',
     galleryImages: [
       'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=800&h=600&fit=crop&q=80',
@@ -45,17 +45,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&q=80'
     ],
     year: '2024',
-    client: 'Nexus Technologies',
-    location: 'San Francisco, CA'
+    client: 'Dubai Holdings',
+    location: 'DIFC, Dubai, UAE'
   },
   {
     id: '3',
-    title: 'Artisan Boutique',
-    slug: 'artisan-boutique',
+    title: 'Souk Al Noor Boutique',
+    slug: 'souk-al-noor-boutique',
     category: 'retail',
     featuredImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Luxury retail space celebrating craftsmanship through curated material storytelling',
-    bodyContent: 'This boutique design celebrates the artisan tradition through thoughtful material selection and spatial narrative. Custom millwork crafted from reclaimed walnut, hand-blown glass fixtures, and carefully curated lighting create an intimate shopping experience that honors both product and craftsmanship. Each zone tells a story of heritage and innovation.',
+    shortDescription: 'Luxury retail experience blending traditional Arabian marketplace heritage with contemporary design',
+    bodyContent: 'Souk Al Noor celebrates the rich tradition of Arabian commerce through thoughtful material selection and spatial narrative. Custom mashrabiya screens crafted from sustainably sourced oud wood, hand-blown Murano glass fixtures, and carefully curated lighting create an intimate shopping experience that honors both traditional craftsmanship and modern luxury retail standards.',
     galleryImages: [
       'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1441986380878-c4248f5b8b5b?w=800&h=600&fit=crop&q=80',
@@ -63,17 +63,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&q=80'
     ],
     year: '2023',
-    client: 'Heritage Artisan Co.',
-    location: 'Brooklyn, NY'
+    client: 'Al Futtaim Group',
+    location: 'City Walk, Dubai, UAE'
   },
   {
     id: '4',
-    title: 'Metropolitan Loft',
-    slug: 'metropolitan-loft',
+    title: 'Jumeirah Palace Residence',
+    slug: 'jumeirah-palace-residence',
     category: 'residential',
     featuredImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Industrial heritage meets contemporary luxury in this converted warehouse masterpiece',
-    bodyContent: 'This converted warehouse loft preserves its industrial character while introducing contemporary comforts and luxury amenities. Exposed brick walls and steel beams provide textural contrast to refined furnishings, custom lighting installations, and modern art collections. The design celebrates the building\'s history while creating spaces for modern living.',
+    shortDescription: 'Contemporary villa masterpiece overlooking the iconic Burj Al Arab and Arabian coastline',
+    bodyContent: 'This architectural marvel seamlessly blends contemporary luxury with traditional Emirati design elements. Expansive terraces capture stunning views of the Arabian Gulf, while interior spaces feature hand-carved Arabian doors, custom zellige tilework, and modern furnishings that celebrate both heritage and innovation. Climate-controlled courtyards and infinity pools create an oasis of tranquility.',
     galleryImages: [
       'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1586023492467-d8a34b2ad755?w=800&h=600&fit=crop&q=80',
@@ -81,17 +81,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&h=600&fit=crop&q=80'
     ],
     year: '2023',
-    client: 'Private Collection',
-    location: 'Chicago, IL'
+    client: 'Royal Family Collection',
+    location: 'Jumeirah Beach, Dubai, UAE'
   },
   {
     id: '5',
-    title: 'Lumina Restaurant',
-    slug: 'lumina-restaurant',
+    title: 'Al Fanar Restaurant',
+    slug: 'al-fanar-restaurant',
     category: 'hospitality',
     featuredImage: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Michelin-starred dining experience through atmospheric lighting and sculptural design',
-    bodyContent: 'Lumina creates an immersive dining atmosphere through layered lighting design, rich material palette, and sculptural elements. The space flows seamlessly from intimate booths to dynamic bar areas, creating varied experiences within a cohesive design narrative. Custom bronze fixtures, velvet banquettes, and Italian marble create an atmosphere of refined elegance.',
+    shortDescription: 'Award-winning dining destination celebrating Emirati cuisine through authentic architectural storytelling',
+    bodyContent: 'Al Fanar creates an immersive culinary journey through layered design elements that honor UAE heritage. Traditional barasti construction, authentic wind tower features, and locally-sourced date palm materials create varied dining experiences within a cohesive cultural narrative. Custom brass fixtures, handwoven textiles, and regional stone create an atmosphere of refined Arabian hospitality.',
     galleryImages: [
       'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1515669067868-5b239c2e60d4?w=800&h=600&fit=crop&q=80',
@@ -99,17 +99,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80'
     ],
     year: '2024',
-    client: 'Lumina Hospitality Group',
-    location: 'Los Angeles, CA'
+    client: 'Emirates Hospitality Group',
+    location: 'Al Seef, Dubai, UAE'
   },
   {
     id: '6',
-    title: 'Tech Innovation Center',
-    slug: 'tech-innovation-center',
+    title: 'Innovation Hub Dubai',
+    slug: 'innovation-hub-dubai',
     category: 'commercial',
     featuredImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Cutting-edge facility designed for breakthrough thinking and collaborative innovation',
-    bodyContent: 'This innovation center embodies the future of collaborative workspace design. Flexible lab spaces, immersive meeting rooms, and social areas are unified by a design language that promotes creativity and breakthrough thinking. Advanced technology integration, adaptive lighting systems, and modular furniture create an environment that evolves with its users.',
+    shortDescription: 'Cutting-edge technology campus designed to position Dubai as the global capital of innovation',
+    bodyContent: 'Innovation Hub Dubai embodies the UAE Vision 2071 through revolutionary collaborative workspace design. Flexible research laboratories, immersive demonstration theaters, and cultural exchange areas are unified by a design language that promotes breakthrough thinking. Advanced climate control, renewable energy integration, and modular infrastructure create an environment that evolves with emerging technologies.',
     galleryImages: [
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&h=600&fit=crop&q=80',
@@ -117,17 +117,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&q=80'
     ],
     year: '2024',
-    client: 'Future Labs Inc.',
-    location: 'Austin, TX'
+    client: 'Dubai Future Foundation',
+    location: 'Dubai Internet City, UAE'
   },
   {
     id: '7',
-    title: 'Sanctuary Spa Resort',
-    slug: 'sanctuary-spa-resort',
+    title: 'Desert Rose Spa Resort',
+    slug: 'desert-rose-spa-resort',
     category: 'hospitality',
     featuredImage: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Wellness retreat design inspired by natural harmony and therapeutic environments',
-    bodyContent: 'The Sanctuary Spa Resort creates a transformative wellness experience through biophilic design principles and therapeutic spatial planning. Natural stone, flowing water features, and abundant greenery create a serene environment that promotes healing and relaxation. Each treatment room is designed as a private sanctuary with views of carefully landscaped gardens.',
+    shortDescription: 'Luxury wellness retreat inspired by ancient Arabian healing traditions and desert landscapes',
+    bodyContent: 'Desert Rose Spa Resort creates a transformative wellness experience through biophilic design principles rooted in Arabian desert ecology. Natural rose quartz stone, flowing falaj water features, and indigenous desert plants create a serene environment that promotes healing. Each treatment pavilion is designed as a private sanctuary with views of the Hajar Mountains and traditional Arabian gardens.',
     galleryImages: [
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop&q=80',
@@ -135,17 +135,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop&q=80'
     ],
     year: '2024',
-    client: 'Sanctuary Wellness Group',
-    location: 'Napa Valley, CA'
+    client: 'Al Habtoor Hospitality',
+    location: 'Al Maha Desert, Dubai, UAE'
   },
   {
     id: '8',
-    title: 'Grand Heritage Mansion',
-    slug: 'grand-heritage-mansion',
+    title: 'Emirates Grand Palace',
+    slug: 'emirates-grand-palace',
     category: 'luxury',
     featuredImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Historic mansion restoration blending classical architecture with modern luxury',
-    bodyContent: 'This grand mansion restoration project carefully preserves the building\'s historic character while introducing contemporary luxury amenities. Original crown moldings, hardwood floors, and period fixtures are restored to their former glory, while modern elements like smart home technology and updated mechanical systems are seamlessly integrated. The design respects the past while embracing the future.',
+    shortDescription: 'Palatial residence restoration honoring UAE heritage while embracing cutting-edge luxury amenities',
+    bodyContent: 'Emirates Grand Palace restoration project carefully preserves traditional Emirati architectural elements while introducing world-class luxury amenities. Original mashrabiya screens, hand-carved gypsum details, and period majlis arrangements are restored using traditional techniques, while modern elements like smart home integration and climate control are seamlessly concealed within the historic fabric.',
     galleryImages: [
       'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&h=600&fit=crop&q=80',
@@ -153,17 +153,17 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&h=600&fit=crop&q=80'
     ],
     year: '2023',
-    client: 'Heritage Foundation',
-    location: 'Newport, RI'
+    client: 'UAE Heritage Foundation',
+    location: 'Al Fahidi, Dubai, UAE'
   },
   {
     id: '9',
-    title: 'Flagship Concept Store',
-    slug: 'flagship-concept-store',
+    title: 'Gold Souk Flagship',
+    slug: 'gold-souk-flagship',
     category: 'retail',
     featuredImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=1000&fit=crop&q=80',
-    shortDescription: 'Immersive brand experience through innovative retail design and digital integration',
-    bodyContent: 'This flagship concept store redefines retail experience through immersive design and cutting-edge technology. Interactive displays, dynamic lighting, and flexible spaces create a brand narrative that engages customers on multiple levels. The design seamlessly blends physical and digital touchpoints to create memorable shopping experiences.',
+    shortDescription: 'Luxury jewelry showroom reimagining the traditional Dubai Gold Souk experience through contemporary design',
+    bodyContent: 'Gold Souk Flagship redefines luxury jewelry retail through immersive design and cultural storytelling. Interactive heritage displays, dynamic LED installations, and flexible showcase systems create a brand narrative that celebrates Dubai\'s position as the global gold trading hub. The design seamlessly blends traditional Arabian hospitality with cutting-edge retail technology.',
     galleryImages: [
       'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=600&fit=crop&q=80',
       'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&h=600&fit=crop&q=80',
@@ -171,7 +171,7 @@ export const mockProjects: Project[] = [
       'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=800&h=600&fit=crop&q=80'
     ],
     year: '2024',
-    client: 'Luxury Brand Collective',
-    location: 'Miami, FL'
+    client: 'Damas Jewelry',
+    location: 'Deira Gold Souk, Dubai, UAE'
   }
 ];
