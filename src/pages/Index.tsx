@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,6 +5,8 @@ import ProjectGrid from '@/components/ProjectGrid';
 import ProjectModal from '@/components/ProjectModal';
 import CategoryFilter from '@/components/CategoryFilter';
 import Header from '@/components/Header';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { mockProjects, categories } from '@/data/mockData';
 import { Project } from '@/types/project';
 
@@ -186,6 +187,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      <Navigation />
+      
       {/* Scroll progress indicator */}
       <div className="scroll-progress fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-white/20 via-white/60 to-white/20 origin-left scale-x-0 z-50" />
       
@@ -226,6 +229,8 @@ const Index = () => {
           </div>
         </main>
       </div>
+
+      <Footer />
 
       {selectedProject && (
         <ProjectModal
