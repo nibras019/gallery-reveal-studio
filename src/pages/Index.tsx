@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +8,9 @@ import CategoryFilter from '@/components/CategoryFilter';
 import Header from '@/components/Header';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import HeroStats from '@/components/HeroStats';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import ProcessSection from '@/components/ProcessSection';
 import { mockProjects, categories } from '@/data/mockData';
 import { Project } from '@/types/project';
 
@@ -16,23 +20,15 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filteredProjects, setFilteredProjects] = useState(mockProjects);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const filterRef = useRef<HTMLDivElement>(null);
-  const mainRef = useRef<HTMLElement>(null);
   const heroBackgroundRef = useRef<HTMLDivElement>(null);
   const contentWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Smooth scrolling
-    gsap.registerPlugin(ScrollTrigger);
-    
     // Enhanced page load animations
     const tl = gsap.timeline();
     
-    // Background animation with parallax setup
-    gsap.set(heroBackgroundRef.current, { scale: 1.2 });
-    
     // Background parallax animation
+    gsap.set(heroBackgroundRef.current, { scale: 1.2 });
     gsap.to(heroBackgroundRef.current, {
       yPercent: -30,
       scale: 1.1,
@@ -45,76 +41,15 @@ const Index = () => {
       }
     });
 
-    // Header entrance with enhanced effects
-    tl.from(headerRef.current, {
-      y: -150,
-      opacity: 0,
-      scale: 0.95,
-      duration: 1.8,
-      ease: "power4.out"
-    })
-    
-    // Filter section with staggered animation
-    .from(filterRef.current, {
-      y: 80,
-      opacity: 0,
-      scale: 0.9,
-      duration: 1.2,
-      ease: "power3.out"
-    }, "-=1.2")
-    
-    // Main content reveal
-    .from(mainRef.current, {
-      y: 60,
-      opacity: 0,
-      duration: 1.4,
-      ease: "power3.out"
-    }, "-=0.8");
-
-    // Advanced scroll-triggered animations for content sections
-    ScrollTrigger.create({
-      trigger: filterRef.current,
-      start: "top 85%",
-      end: "bottom 15%",
-      onEnter: () => {
-        gsap.fromTo('.filter-button', {
-          x: -50,
-          opacity: 0,
-          scale: 0.8
-        }, {
-          x: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "back.out(1.7)"
-        });
-      }
-    });
-
-    // Project grid entrance animation
-    ScrollTrigger.create({
-      trigger: '.project-grid',
-      start: "top 80%",
-      onEnter: () => {
-        gsap.fromTo('.project-grid-item', {
-          y: 120,
-          opacity: 0,
-          scale: 0.7,
-          rotationY: 15
-        }, {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          rotationY: 0,
-          duration: 1,
-          stagger: {
-            amount: 0.6,
-            from: "start",
-            ease: "power2.out"
-          },
-          ease: "power3.out"
-        });
+    // Scroll progress indicator
+    gsap.to('.scroll-progress', {
+      scaleX: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.3
       }
     });
 
@@ -126,38 +61,6 @@ const Index = () => {
       yoyo: true,
       repeat: -1,
       stagger: 0.5
-    });
-
-    // Text reveal animations for any text elements
-    const textElements = document.querySelectorAll('.reveal-text');
-    textElements.forEach((element) => {
-      ScrollTrigger.create({
-        trigger: element,
-        start: "top 85%",
-        onEnter: () => {
-          gsap.fromTo(element, {
-            y: 50,
-            opacity: 0
-          }, {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out"
-          });
-        }
-      });
-    });
-
-    // Scroll progress indicator
-    gsap.to('.scroll-progress', {
-      scaleX: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: document.body,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.3
-      }
     });
 
     return () => {
@@ -208,12 +111,11 @@ const Index = () => {
       <div className="floating-element fixed bottom-1/4 right-1/4 w-1.5 h-1.5 bg-white/15 rounded-full" />
       
       <div ref={contentWrapperRef} className="relative z-10">
-        <div ref={headerRef}>
-          <Header />
-        </div>
+        <Header />
+        <HeroStats />
 
-        <main ref={mainRef} className="container mx-auto px-6 lg:px-12 relative">
-          <div ref={filterRef} className="mb-16">
+        <main className="container mx-auto px-6 lg:px-12 relative">
+          <div className="mb-16">
             <CategoryFilter
               categories={categories}
               selectedCategory={selectedCategory}
@@ -228,6 +130,9 @@ const Index = () => {
             />
           </div>
         </main>
+
+        <ProcessSection />
+        <TestimonialsSection />
       </div>
 
       <Footer />
