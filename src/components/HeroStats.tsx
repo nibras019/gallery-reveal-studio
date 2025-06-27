@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HeroStats = () => {
   const statsRef = useRef<HTMLDivElement>(null);
-  const numbersRef = useRef<HTMLDivElement[]>([]);
+  const numbersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -61,15 +61,17 @@ const HeroStats = () => {
           if (el) {
             const endValue = parseInt(el.textContent || '0');
             gsap.fromTo(el, {
-              textContent: 0
+              textContent: "0"
             }, {
-              textContent: endValue,
+              textContent: endValue.toString(),
               duration: 2,
               delay: index * 0.2,
               ease: "power2.out",
               snap: { textContent: 1 },
               onUpdate: function() {
-                el.textContent = Math.ceil(this.targets()[0].textContent);
+                if (el) {
+                  el.textContent = Math.ceil(Number(this.targets()[0].textContent)).toString();
+                }
               }
             });
           }
@@ -127,7 +129,9 @@ const HeroStats = () => {
                   {/* Animated number */}
                   <div className="text-4xl lg:text-5xl font-extralight mb-3 text-white">
                     <span 
-                      ref={el => el && (numbersRef.current[index] = el)}
+                      ref={el => {
+                        if (el) numbersRef.current[index] = el;
+                      }}
                       className="inline-block"
                     >
                       {stat.value}
