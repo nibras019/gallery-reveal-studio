@@ -7,7 +7,7 @@ import { ArrowDown, Play } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLSection>(null);
+  const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -90,6 +90,9 @@ const HeroSection = () => {
       repeat: -1
     });
 
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
