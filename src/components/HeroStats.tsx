@@ -101,9 +101,9 @@ const HeroStats = () => {
   ];
 
   return (
-    <section ref={statsRef} className="py-20 relative">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
+    <section ref={statsRef} className="py-12 sm:py-16 lg:py-20 relative px-4 sm:px-6">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 relative">
           {/* Background glow effects */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-3xl" />
           
@@ -115,19 +115,19 @@ const HeroStats = () => {
                 className="stat-card text-center relative group"
               >
                 {/* Card background with glassmorphism */}
-                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 group-hover:bg-white/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/10 group-hover:bg-white/10 transition-all duration-500" />
                 
                 {/* Floating icon */}
-                <div className="relative z-10 p-8">
-                  <div className="w-16 h-16 mx-auto mb-6 relative">
+                <div className="relative z-10 p-4 sm:p-6 lg:p-8">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 mx-auto mb-3 sm:mb-4 lg:mb-6 relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-full blur-sm group-hover:blur-md transition-all duration-500" />
                     <div className="relative w-full h-full bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <Icon className="w-8 h-8 text-white/80 group-hover:text-white transition-colors duration-500" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white/80 group-hover:text-white transition-colors duration-500" />
                     </div>
                   </div>
                   
                   {/* Animated number */}
-                  <div className="text-4xl lg:text-5xl font-extralight mb-3 text-white">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extralight mb-2 sm:mb-3 text-white">
                     <span 
                       ref={el => {
                         if (el) numbersRef.current[index] = el;
@@ -140,14 +140,14 @@ const HeroStats = () => {
                   </div>
                   
                   {/* Label */}
-                  <div className="text-gray-400 text-sm font-light tracking-wide uppercase">
+                  <div className="text-gray-400 text-xs sm:text-sm font-light tracking-wide uppercase leading-tight">
                     {stat.label}
                   </div>
                 </div>
 
-                {/* Hover effect particles */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
-                <div className="absolute bottom-4 left-4 w-1 h-1 bg-white/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-bounce" />
+                {/* Hover effect particles - hidden on mobile */}
+                <div className="hidden sm:block absolute top-4 right-4 w-2 h-2 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+                <div className="hidden sm:block absolute bottom-4 left-4 w-1 h-1 bg-white/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-bounce" />
               </div>
             );
           })}
