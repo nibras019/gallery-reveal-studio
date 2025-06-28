@@ -10,6 +10,9 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import HeroStats from '@/components/HeroStats';
 import ServicesPreview from '@/components/ServicesPreview';
+import AboutPreview from '@/components/AboutPreview';
+import PortfolioShowcase from '@/components/PortfolioShowcase';
+import TeamSection from '@/components/TeamSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProcessSection from '@/components/ProcessSection';
 import { mockProjects, categories } from '@/data/mockData';
@@ -70,7 +73,9 @@ const Index = () => {
       <div className="relative z-10">
         <HeroSection />
         <HeroStats />
+        <AboutPreview />
         <ServicesPreview />
+        <PortfolioShowcase />
 
         <main className="container mx-auto px-6 lg:px-12 relative py-20">
           <div className="text-center mb-16">
@@ -97,6 +102,7 @@ const Index = () => {
         </main>
 
         <ProcessSection />
+        <TeamSection />
         <TestimonialsSection />
       </div>
 
