@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, Award, Briefcase } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,21 +45,30 @@ const TeamSection = () => {
   const teamMembers = [
     {
       name: "Ahmed Al-Rashid",
-      role: "Principal Architect",
+      role: "Principal Architect & Founder",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      bio: "Leading architectural innovation with 15+ years of experience in luxury developments."
+      bio: "Leading architectural innovation with 15+ years of experience in luxury developments across the Middle East. Ahmed's vision has shaped Dubai's most iconic residential and commercial projects.",
+      experience: "15+ Years",
+      projects: "80+ Projects",
+      specialties: ["Luxury Residential", "Commercial Design", "Urban Planning"]
     },
     {
       name: "Sarah Mitchell",
       role: "Interior Design Director",
       image: "https://images.unsplash.com/photo-1494790108755-2616b4b02a2e?w=400&h=400&fit=crop&crop=face",
-      bio: "Crafting exceptional interior experiences that blend luxury with functionality."
+      bio: "Award-winning interior designer specializing in luxury hospitality and residential spaces. Sarah brings international expertise with a focus on sustainable and innovative design solutions.",
+      experience: "12+ Years",
+      projects: "60+ Projects",
+      specialties: ["Luxury Interiors", "Hospitality Design", "Sustainable Design"]
     },
     {
       name: "Omar Hassan",
-      role: "Project Manager",
+      role: "Senior Project Manager",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "Ensuring flawless project execution from concept to completion."
+      bio: "Expert project manager ensuring flawless execution from concept to completion. Omar's meticulous attention to detail and timeline management has delivered projects worth over AED 2 billion.",
+      experience: "10+ Years",
+      projects: "100+ Projects",
+      specialties: ["Project Management", "Quality Control", "Timeline Optimization"]
     }
   ];
 
@@ -69,11 +78,11 @@ const TeamSection = () => {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-extralight tracking-wider mb-6 sm:mb-8 text-white">
-            Our Team
+            Meet Our Team
           </h2>
           <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl lg:max-w-4xl mx-auto leading-relaxed">
-            Meet the visionaries behind Dubai's most prestigious architectural projects
+            Meet the visionaries and experts behind Dubai's most prestigious architectural projects. Our diverse team brings together international experience and local expertise.
           </p>
         </div>
 
@@ -101,16 +110,46 @@ const TeamSection = () => {
                 </div>
 
                 {/* Info */}
-                <div className="text-center">
+                <div className="text-center mb-6">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-light text-white mb-2 group-hover:text-white transition-colors duration-300">
                     {member.name}
                   </h3>
-                  <div className="text-white/60 text-sm sm:text-base mb-4 sm:mb-6">
+                  <div className="text-white/60 text-sm sm:text-base mb-4">
                     {member.role}
                   </div>
-                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-6 group-hover:text-gray-300 transition-colors duration-300">
                     {member.bio}
                   </p>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="flex items-center justify-center mb-2">
+                        <Briefcase className="w-4 h-4 text-white/60 mr-1" />
+                      </div>
+                      <div className="text-white text-sm font-light">{member.experience}</div>
+                      <div className="text-white/40 text-xs">Experience</div>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="flex items-center justify-center mb-2">
+                        <Award className="w-4 h-4 text-white/60 mr-1" />
+                      </div>
+                      <div className="text-white text-sm font-light">{member.projects}</div>
+                      <div className="text-white/40 text-xs">Completed</div>
+                    </div>
+                  </div>
+
+                  {/* Specialties */}
+                  <div className="mb-6">
+                    <div className="text-white/60 text-xs mb-2">Specialties</div>
+                    <div className="flex flex-wrap gap-1 justify-center">
+                      {member.specialties.map((specialty, idx) => (
+                        <span key={idx} className="bg-white/10 text-white text-xs px-2 py-1 rounded">
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
                   {/* Social Links */}
                   <div className="flex justify-center space-x-4">
