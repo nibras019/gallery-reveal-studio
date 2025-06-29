@@ -77,8 +77,15 @@ const Index = () => {
         <ServicesPreview />
         <PortfolioShowcase />
 
-        <main className="container mx-auto px-4 sm:px-6 lg:px-12 relative py-12 sm:py-16 lg:py-20">
-          <div className="mb-12 sm:mb-16">
+        <main className="container mx-auto px-6 lg:px-12 relative py-20">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-7xl font-extralight tracking-wider mb-8 text-white">
+              Featured Projects
+            </h2>
+            <div className="w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-12" />
+          </div>
+
+          <div className="mb-16">
             <CategoryFilter
               categories={categories}
               selectedCategory={selectedCategory}
