@@ -94,8 +94,44 @@ const Index = () => {
       <div className="scroll-progress fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-white/20 via-white/60 to-white/20 origin-left scale-x-0 z-50" />
       
       <div className="relative z-10">
-        <HeroSection />
+        {/* Updated HeroSection with navigation */}
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-12">
+          {/* Enhanced background effects */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent" />
+          
+          {/* Floating particles - hidden on mobile for performance */}
+          <div className="hidden md:block absolute top-20 left-20 w-3 h-3 bg-white/20 rounded-full animate-pulse" />
+          <div className="hidden md:block absolute top-40 right-32 w-2 h-2 bg-white/30 rounded-full animate-bounce" />
+          <div className="hidden md:block absolute bottom-32 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-ping" />
+
+          <div className="container mx-auto text-center relative z-10 py-16 sm:py-20">
+            <h1 className="text-4xl sm:text-5xl lg:text-8xl font-extralight tracking-wider mb-6 sm:mb-8 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+              DUBAI LUXE
+            </h1>
+            
+            <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6 sm:mb-8" />
+            
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-2xl lg:max-w-4xl mx-auto leading-relaxed font-light mb-8 sm:mb-12 px-4">
+              Architectural Mastery & Interior Excellence in the Heart of Emirates.
+              <br className="hidden sm:block" />
+              Discover our premium portfolio of luxury developments.
+            </p>
+
+            <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:items-center sm:justify-center">
+              <Link to="#projects" className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/20 transition-all duration-300 text-sm sm:text-base inline-block">
+                Explore Projects
+              </Link>
+              <Link to="/contact" className="w-full sm:w-auto border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/5 transition-all duration-300 text-sm sm:text-base inline-block">
+                Get in Touch
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <HeroStats />
+        
+        {/* Updated AboutPreview with navigation */}
         <AboutPreview />
         
         {/* CTA Buttons Section */}
@@ -117,7 +153,7 @@ const Index = () => {
                     Learn about our journey and expertise in luxury design
                   </p>
                   <div className="flex items-center justify-center text-white/60 group-hover:text-white transition-colors">
-                    <span className="text-sm">Discover More</span>
+                    <span className="text-sm">Discover Our Story</span>
                     <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -131,7 +167,7 @@ const Index = () => {
                     Explore our comprehensive design and architectural solutions
                   </p>
                   <div className="flex items-center justify-center text-white/60 group-hover:text-white transition-colors">
-                    <span className="text-sm">View Services</span>
+                    <span className="text-sm">View All Services</span>
                     <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -157,7 +193,7 @@ const Index = () => {
         <ServicesPreview />
         <PortfolioShowcase />
 
-        <main className="container mx-auto px-6 lg:px-12 relative py-20">
+        <main id="projects" className="container mx-auto px-6 lg:px-12 relative py-20">
           <div className="text-center mb-16 relative">
             <h2 className="text-5xl lg:text-7xl font-extralight tracking-wider mb-8 text-white">
               Featured Projects
@@ -178,6 +214,17 @@ const Index = () => {
               projects={filteredProjects}
               onProjectClick={handleProjectClick}
             />
+          </div>
+
+          {/* View Full Portfolio Button */}
+          <div className="text-center mt-16">
+            <Link 
+              to="#projects" 
+              className="inline-flex items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg transition-all duration-300 group"
+            >
+              <span className="mr-2">View Full Portfolio</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </main>
 
