@@ -2,7 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, ExternalLink, MapPin, Calendar } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,30 +46,21 @@ const PortfolioShowcase = () => {
   const projects = [
     {
       title: "Burj Vista Residences",
-      category: "Luxury Residential",
-      location: "Downtown Dubai",
-      year: "2023",
+      category: "Residential",
       image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop",
-      description: "Ultra-luxury high-rise living featuring panoramic city views, premium amenities, and sophisticated interior design. This 45-story tower redefines modern living in the heart of Dubai.",
-      features: ["45 Floors", "Premium Amenities", "City Views", "Smart Home Technology"]
+      description: "Luxury high-rise living with panoramic city views"
     },
     {
       title: "Emirates Business Hub",
-      category: "Commercial Excellence",
-      location: "DIFC",
-      year: "2022",
+      category: "Commercial",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
-      description: "State-of-the-art corporate headquarters featuring innovative sustainable design, flexible workspace solutions, and cutting-edge technology integration for modern businesses.",
-      features: ["LEED Certified", "Flexible Spaces", "Smart Building", "Rooftop Gardens"]
+      description: "Modern corporate headquarters with innovative design"
     },
     {
-      title: "Marina Pearl Towers",
-      category: "Mixed-Use Development",
-      location: "Dubai Marina",
-      year: "2024",
+      title: "Dubai Marina Towers",
+      category: "Mixed-Use",
       image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
-      description: "Iconic twin towers combining luxury residences, premium retail, and world-class dining. These architectural masterpieces are redefining the marina skyline with their distinctive design.",
-      features: ["Twin Towers", "Mixed-Use", "Waterfront", "Luxury Retail"]
+      description: "Iconic twin towers redefining the marina skyline"
     }
   ];
 
@@ -86,7 +77,7 @@ const PortfolioShowcase = () => {
           </h2>
           <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl lg:max-w-4xl mx-auto leading-relaxed">
-            Explore our signature projects that have shaped Dubai's architectural landscape and set new standards for luxury development
+            Explore our signature projects that have shaped Dubai's architectural landscape
           </p>
         </div>
 
@@ -105,39 +96,20 @@ const PortfolioShowcase = () => {
             
             {/* Content Overlay */}
             <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-8">
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm sm:text-base mb-2">
-                  <span className="flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    {projects[activeProject].location}
-                  </span>
-                  <span className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {projects[activeProject].year}
-                  </span>
-                  <span className="bg-white/10 px-3 py-1 rounded-full text-xs">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <div>
+                  <div className="text-white/60 text-sm sm:text-base mb-2">
                     {projects[activeProject].category}
-                  </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white mb-3 sm:mb-4">
+                    {projects[activeProject].title}
+                  </h3>
+                  <p className="text-gray-300 text-sm sm:text-base max-w-md">
+                    {projects[activeProject].description}
+                  </p>
                 </div>
-                
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white mb-3 sm:mb-4">
-                  {projects[activeProject].title}
-                </h3>
-                
-                <p className="text-gray-300 text-sm sm:text-base max-w-2xl mb-4">
-                  {projects[activeProject].description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {projects[activeProject].features.map((feature, index) => (
-                    <span key={index} className="bg-white/10 text-white text-xs px-2 py-1 rounded">
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                <button className="group flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-white/20 transition-all duration-300 w-fit">
-                  <span className="mr-2 text-sm sm:text-base">View Project Details</span>
+                <button className="group flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-white/20 transition-all duration-300">
+                  <span className="mr-2 text-sm sm:text-base">View Project</span>
                   <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                 </button>
               </div>
@@ -179,7 +151,7 @@ const PortfolioShowcase = () => {
         {/* CTA */}
         <div className="text-center mt-12 sm:mt-16">
           <button className="group flex items-center mx-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/20 transition-all duration-300">
-            <span className="mr-2 sm:mr-3 text-sm sm:text-base">View Complete Portfolio</span>
+            <span className="mr-2 sm:mr-3 text-sm sm:text-base">View Full Portfolio</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>

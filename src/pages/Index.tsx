@@ -15,7 +15,6 @@ import PortfolioShowcase from '@/components/PortfolioShowcase';
 import TeamSection from '@/components/TeamSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProcessSection from '@/components/ProcessSection';
-import ContactPreview from '@/components/ContactPreview';
 import { mockProjects, categories } from '@/data/mockData';
 import { Project } from '@/types/project';
 
@@ -98,7 +97,6 @@ const Index = () => {
         <ProcessSection />
         <TeamSection />
         <TestimonialsSection />
-        <ContactPreview />
       </div>
 
       <Footer />

@@ -68,11 +68,11 @@ const AboutPreview = () => {
               className="relative h-64 sm:h-80 lg:h-[600px] rounded-2xl overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop"
-                alt="Dubai Luxe Architecture Projects"
+                src="https://images.unsplash.com/photo-1466442929976-97f336a657be?w=800&h=600&fit=crop"
+                alt="Luxury Architecture"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               
               {/* Floating stats */}
               <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 sm:p-6">
@@ -97,14 +97,7 @@ const AboutPreview = () => {
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-6 sm:mb-8">
               For over a decade, Dubai Luxe has been at the forefront of architectural innovation, 
-              creating iconic structures that define the city's evolving skyline. We specialize in 
-              luxury residential, commercial, and mixed-use developments that embody the spirit of modern Dubai.
-            </p>
-
-            <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6 sm:mb-8">
-              Our award-winning team combines international expertise with local insights, delivering 
-              exceptional projects that exceed expectations. From concept to completion, we ensure 
-              every detail reflects our commitment to excellence and innovation.
+              creating iconic structures that define the city's evolving skyline.
             </p>
 
             <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
