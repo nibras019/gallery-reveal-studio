@@ -14,29 +14,10 @@ interface ProjectGridProps {
 
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) => {
   const gridRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (gridRef.current && headerRef.current) {
+    if (gridRef.current) {
       const items = gridRef.current.querySelectorAll('.project-grid-item');
-      
-      // Enhanced header animation
-      gsap.fromTo(headerRef.current.children, {
-        y: 100,
-        opacity: 0,
-        scale: 0.8
-      }, {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 1.5,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 80%"
-        }
-      });
 
       // Enhanced grid entrance with magnetic effect
       ScrollTrigger.create({
@@ -167,18 +148,6 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
 
   return (
     <div className="relative">
-      {/* Enhanced header section */}
-      <div ref={headerRef} className="text-center mb-20">
-        <h2 className="text-5xl lg:text-7xl font-extralight tracking-wider mb-8 text-white">
-          Featured Projects
-        </h2>
-        <div className="w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8" />
-        <div className="w-64 h-1 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 mx-auto mb-12 rounded-full" />
-        <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-          Discover our portfolio of exceptional luxury developments that define architectural excellence in Dubai.
-        </p>
-      </div>
-
       <div 
         ref={gridRef}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 pb-20 relative"
