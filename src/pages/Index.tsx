@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Building2, Users, Phone } from 'lucide-react';
 import ProjectGrid from '@/components/ProjectGrid';
 import ProjectModal from '@/components/ProjectModal';
 import CategoryFilter from '@/components/CategoryFilter';
@@ -25,6 +27,7 @@ const Index = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filteredProjects, setFilteredProjects] = useState(mockProjects);
   const filterRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Scroll progress indicator
@@ -38,6 +41,25 @@ const Index = () => {
         scrub: 0.3
       }
     });
+
+    // CTA buttons animation
+    if (ctaRef.current) {
+      gsap.fromTo('.cta-button',
+        { y: 50, opacity: 0, scale: 0.9 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ctaRef.current,
+            start: "top 80%"
+          }
+        }
+      );
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -75,6 +97,63 @@ const Index = () => {
         <HeroSection />
         <HeroStats />
         <AboutPreview />
+        
+        {/* CTA Buttons Section */}
+        <section ref={ctaRef} className="py-20 bg-white/5">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-light mb-4">Explore Our World</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Discover our story, services, and how we can transform your vision into reality
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <Link to="/about" className="cta-button group">
+                <div className="bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 rounded-lg p-8 transition-all duration-300 text-center">
+                  <Users className="w-12 h-12 mx-auto mb-4 text-white/80 group-hover:text-white transition-colors" />
+                  <h3 className="text-xl font-light mb-3">About Us</h3>
+                  <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300">
+                    Learn about our journey and expertise in luxury design
+                  </p>
+                  <div className="flex items-center justify-center text-white/60 group-hover:text-white transition-colors">
+                    <span className="text-sm">Discover More</span>
+                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              <Link to="/services" className="cta-button group">
+                <div className="bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 rounded-lg p-8 transition-all duration-300 text-center">
+                  <Building2 className="w-12 h-12 mx-auto mb-4 text-white/80 group-hover:text-white transition-colors" />
+                  <h3 className="text-xl font-light mb-3">Our Services</h3>
+                  <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300">
+                    Explore our comprehensive design and architectural solutions
+                  </p>
+                  <div className="flex items-center justify-center text-white/60 group-hover:text-white transition-colors">
+                    <span className="text-sm">View Services</span>
+                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              <Link to="/contact" className="cta-button group">
+                <div className="bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 rounded-lg p-8 transition-all duration-300 text-center">
+                  <Phone className="w-12 h-12 mx-auto mb-4 text-white/80 group-hover:text-white transition-colors" />
+                  <h3 className="text-xl font-light mb-3">Contact Us</h3>
+                  <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300">
+                    Ready to start your luxury design journey with us?
+                  </p>
+                  <div className="flex items-center justify-center text-white/60 group-hover:text-white transition-colors">
+                    <span className="text-sm">Get In Touch</span>
+                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <ServicesPreview />
         <PortfolioShowcase />
 
